@@ -1,0 +1,45 @@
+body {
+    background-color: #80dfff;
+    font-family: Courier;
+    text-align: center;
+}
+
+a:link {
+    color: white;
+}
+a:hover {
+    color: #0000ff
+}
+a:active {
+    color: #0000b3;
+}
+
+.main-wrapper {
+    width: 400px;
+    height: 400px;
+
+    position:absolute; /*it can be fixed too*/
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+}
+
+.main-wrapper h1 {
+    font-size: 48px;
+}
+
+.main-wrapper h2 {
+    font-size: 22px;
+}
+
+.play-button {
+    border: 3px solid white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
