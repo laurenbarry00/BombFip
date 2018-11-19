@@ -1,18 +1,19 @@
 table {
     border-collapse: collapse;
-    display: inline;
-    padding: 0px;
+    display: inline-block;
+    width: 65%;
 }
-td, tr {
-    border: 1px solid black;
-    width: 19%;
+tr {
+    height: 80%;
 }
 
 td {
+    border: 1px solid black;
+    width: 3%;
 }
 
-tr img {
-    height: 10%;
+td img {
+    width: 20%;
 }
 
 body {
