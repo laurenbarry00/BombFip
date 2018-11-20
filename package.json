@@ -1,0 +1,26 @@
+{
+  "name": "lb-bombflip",
+  "version": "1.0.0",
+  "description": "BombFlip game by Lauren Berry",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Name Name Name Name Name Name Name Name",
+    "email": "email@whatever.lol",
+    "url": "http://HOMEPAGE!!!!!!!/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laurenbarry00/BombFlip"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-node-sass": "^1.0.1",
+    "grunt-sync": "^0.8.0",
+    "load-grunt-tasks": "^3.5.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
+    "node-sass": "^4.9.3"
+  }
+}
