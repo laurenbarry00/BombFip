@@ -1,12 +1,12 @@
 {
   "name": "lb-bombflip",
   "version": "1.0.0",
-  "description": "BombFlip game by Lauren Berry",
+  "description": "BombFlip game by Lauren Barry",
   "license": "UNLICENSED",
   "author": {
-    "name": "Name Name Name Name Name Name Name Name",
-    "email": "email@whatever.lol",
-    "url": "http://HOMEPAGE!!!!!!!/"
+    "name": "Lauren Barry",
+    "email": "laurenbarry00@gmail.com",
+    "url": "https://laurenbarry00.github.io"
   },
   "repository": {
     "type": "git",
