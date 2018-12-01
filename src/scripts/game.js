@@ -2,6 +2,9 @@ var table = document.getElementById("gameTable");
 var scoreElement = document.getElementById("score");
 var score = 0;
 
+var pointsSquares = 0; // Any cells that aren't bombs. To keep track of game win conditions
+var pointsSquaresFound = 0; // Points cells that have been uncovered safely
+
 var gameArray = [
     [,,,,],
     [,,,,],
@@ -28,22 +31,26 @@ if (table != null) {
                 });
                 } else { // Just default it to One
                 gameArray[i][j] = 1;
+                pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
                     oneOnClick(this);
                     });
                 }
             } else if (cardType === 1) { // Card is a One
                 gameArray[i][j] = 1;
+                pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
                     oneOnClick(this);
                 });
             }  else if (cardType === 2) { // Card is a Two
                 gameArray[i][j] = 2;
+                pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
                     twoOnClick(this);
                 });
             } else if (cardType === 3) { // Card is a Three
                 gameArray[i][j] = 3;
+                pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
                     threeOnClick(this);
                 });
@@ -92,16 +99,23 @@ if (table != null) {
 
 function bombOnClick(cell) {
     cell.firstElementChild.src = "img/bomb.png";
-    alert("You hit a bomb! Game over!");
-    window.location.reload();
-    console.log("bomb");
+    setTimeout(function(){
+        alert("You hit a bomb! Game over.");
+        window.location.reload();
+    }, 500);
 }
 
 function oneOnClick(cell) {
     cell.firstElementChild.src = "img/one.png";
     score++;
     scoreElement.innerHTML = "Score: " + score;
-    console.log("one");
+    pointsSquaresFound++;
+    if (pointsSquares === pointsSquaresFound) {
+        setTimeout(function(){
+            alert("You won!");
+            window.location.reload();
+        }, 500);
+    }
 }
 
 function twoOnClick(cell) {
@@ -112,7 +126,13 @@ function twoOnClick(cell) {
         score *= 2;
     }
     scoreElement.innerHTML = "Score: " + score;
-    console.log("two");
+    pointsSquaresFound++;
+    if (pointsSquares === pointsSquaresFound) {
+        setTimeout(function(){
+            alert("You won!");
+            window.location.reload();
+        }, 500);
+    }
 }
 
 function threeOnClick(cell) {
@@ -123,9 +143,15 @@ function threeOnClick(cell) {
         score *= 3;
     }
     scoreElement.innerHTML = "Score: " + score;
-    console.log("three");
+    pointsSquaresFound++;
+    if (pointsSquares === pointsSquaresFound) {
+        setTimeout(function(){
+            alert("You won!");
+            window.location.reload();
+        }, 500);
+    }
 }
 
 function modifyInfoCell(cell, points, bombs) {
-    cell.innerHTML = "<p>" + points + "</p>" + "<hr />" + "<img src=\"img/bomb.png\" alt=\"Bomb icon\" /><p>" + bombs + "</p>";
+    cell.innerHTML = "<p>" + points + "</p>" + "<hr />" + "<img src='img/bomb.png' alt='Bomb icon' /><p>" + bombs + "</p>";
 }

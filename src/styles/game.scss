@@ -1,19 +1,64 @@
+.main-gameboard {
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
-    display: inline-block;
-    width: 65%;
+    width: 100%;
 }
 tr {
     height: 80%;
 }
 
 td {
-    border: 1px solid black;
-    width: 3%;
+    border: 2px solid black;
+    padding: 0px;
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    background-color: white;
+    &.bottom-empty {
+        background-color: transparent;
+        border-width: 0px;
+    }
+}
+
+td p {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.bombs {
+    padding-left: 10px;
 }
 
 td img {
-    width: 20%;
+    padding: 5px;
+    width: 120px;
+    height: 120px;
+    height: 90;
+    vertical-align: middle;
+}
+
+.right-info img {
+    height: 50px;
+    width: 50px;
+}
+.bottom-info img {
+    height: 50px;
+    width: 50px;
+}
+
+hr {
+    border: 0px;
+    color: black;
+    background-color: black;
+    height: 2px;
+    width: 100%;
 }
 
 body {

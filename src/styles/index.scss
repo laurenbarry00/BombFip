@@ -3,30 +3,44 @@ body {
     font-family: Courier;
     text-align: center;
 }
+a {
+    &:link {
+        color: #102E99;
+    }
+    &:visited {
+        color: #102E99;
+    }
+    &:active {
+        color: #ffffff;
+    }
+    &:hover,
+    &:visited:hover {
+        color: #ffffff;
+    }
+}
 
-a:link {
-    color: white;
-}
-a:hover {
-    color: #0000ff
-}
-a:active {
-    color: #0000b3;
-}
 
 .main-wrapper {
     width: 400px;
     height: 400px;
 
-    position:absolute; /*it can be fixed too*/
-    left:0; right:0;
-    top:0; bottom:0;
-    margin:auto;
+    position: absolute; /*it can be fixed too*/
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    margin: auto;
 
     /*this to solve "the content will not be cut when the window is smaller than the content": */
-    max-width:100%;
-    max-height:100%;
-    overflow:auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+
+    display: inline-block;
+}
+
+.content {
+    display: inline;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .main-wrapper h1 {
@@ -37,9 +51,23 @@ a:active {
     font-size: 22px;
 }
 
+.buttons {
+    display: inline-block;
+}
+
 .play-button {
-    border: 3px solid white;
-    padding: 10px;
+    border: 2px solid white;
     font-weight: bold;
     font-size: 20px;
+    padding: 10px;
+    width: 200px;
+}
+
+.how-to-button {
+    margin-top: 20px;
+    border: 2px solid white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
 }
