@@ -98,7 +98,7 @@ if (table != null) {
 }
 
 function bombOnClick(cell) {
-    cell.firstElementChild.src = "img/bomb.png";
+    cell.firstElementChild.src = "img/icon_splode.png";
     setTimeout(function(){
         alert("You hit a bomb! Game over.");
         window.location.reload();
@@ -106,7 +106,7 @@ function bombOnClick(cell) {
 }
 
 function oneOnClick(cell) {
-    cell.firstElementChild.src = "img/one.png";
+    cell.firstElementChild.src = "img/icon_one.png";
     score++;
     scoreElement.innerHTML = "Score: " + score;
     pointsSquaresFound++;
@@ -119,7 +119,7 @@ function oneOnClick(cell) {
 }
 
 function twoOnClick(cell) {
-    cell.firstElementChild.src = "img/two.png";
+    cell.firstElementChild.src = "img/icon_two.png";
     if (score === 0) {
         score += 2;
     } else {
@@ -136,7 +136,7 @@ function twoOnClick(cell) {
 }
 
 function threeOnClick(cell) {
-    cell.firstElementChild.src = "img/three.png";
+    cell.firstElementChild.src = "img/icons_three.png";
     if (score === 0) {
         score += 3;
     } else {
@@ -153,5 +153,5 @@ function threeOnClick(cell) {
 }
 
 function modifyInfoCell(cell, points, bombs) {
-    cell.innerHTML = "<p>" + points + "</p>" + "<hr />" + "<img src='img/bomb.png' alt='Bomb icon' /><p>" + bombs + "</p>";
+    cell.innerHTML = "<p>" + points + "</p>" + "<hr />" + "<img src='img/icon_bomb.png' alt='Bomb icon' /><p>" + bombs + "</p>";
 }
