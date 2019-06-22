@@ -20,39 +20,39 @@ if (table != null) {
         for (let j = 0; j < table.rows[i].cells.length - 1; j++) { // Not including the last cell of the row, because that's the info column
             var row = table.rows[i];
             var cell = row.cells[j];
-
+            
             var cardType = Math.floor(Math.random() * 4); // 0 = bomb, 1, 2, and 3 point values
             if (cardType === 0) { // Card is a Bomb
                 if (bombsInRow <= 3) {
                     bombsInRow++;
                     gameArray[i][j] = 0;
                     row.cells[j].addEventListener("click", function() {
-                        bombOnClick(this);
+                        onClick(this, -1);
                 });
                 } else { // Just default it to One
                 gameArray[i][j] = 1;
                 pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
-                    oneOnClick(this);
+                    onClick(this, 1);
                     });
                 }
             } else if (cardType === 1) { // Card is a One
                 gameArray[i][j] = 1;
                 pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
-                    oneOnClick(this);
+                    onClick(this, 1);
                 });
             }  else if (cardType === 2) { // Card is a Two
                 gameArray[i][j] = 2;
                 pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
-                    twoOnClick(this);
+                    onClick(this, 2);
                 });
             } else if (cardType === 3) { // Card is a Three
                 gameArray[i][j] = 3;
                 pointsSquares++;
                 row.cells[j].addEventListener("click", function() {
-                    threeOnClick(this);
+                    onClick(this, 3);
                 });
             }
         }
@@ -97,58 +97,59 @@ if (table != null) {
     }
 }
 
-function bombOnClick(cell) {
-    cell.firstElementChild.src = "img/icon_splode.png";
-    setTimeout(function(){
-        alert("You hit a bomb! Game over.");
-        window.location.reload();
-    }, 500);
-}
-
-function oneOnClick(cell) {
-    cell.firstElementChild.src = "img/icon_one.png";
-    score++;
-    scoreElement.innerHTML = "Score: " + score;
-    pointsSquaresFound++;
-    if (pointsSquares === pointsSquaresFound) {
-        setTimeout(function(){
-            alert("You won!");
-            window.location.reload();
-        }, 500);
-    }
-}
-
-function twoOnClick(cell) {
-    cell.firstElementChild.src = "img/icon_two.png";
-    if (score === 0) {
-        score += 2;
-    } else {
-        score *= 2;
-    }
-    scoreElement.innerHTML = "Score: " + score;
-    pointsSquaresFound++;
-    if (pointsSquares === pointsSquaresFound) {
-        setTimeout(function(){
-            alert("You won!");
-            window.location.reload();
-        }, 500);
-    }
-}
-
-function threeOnClick(cell) {
-    cell.firstElementChild.src = "img/icons_three.png";
-    if (score === 0) {
-        score += 3;
-    } else {
-        score *= 3;
-    }
-    scoreElement.innerHTML = "Score: " + score;
-    pointsSquaresFound++;
-    if (pointsSquares === pointsSquaresFound) {
-        setTimeout(function(){
-            alert("You won!");
-            window.location.reload();
-        }, 500);
+function onClick(cell, cellType) {
+    switch(cellType) {
+        case -1:
+            cell.firstElementChild.src = "img/icon_splode.png";
+            setTimeout(function(){
+                alert("You hit a bomb! Game over.");
+                window.location.reload();
+            }, 500);
+            break;
+        case 1:
+            cell.firstElementChild.src = "img/icon_one.png";
+            score++;
+            scoreElement.innerHTML = "Score: " + score;
+            pointsSquaresFound++;
+            if (pointsSquares === pointsSquaresFound) {
+                setTimeout(function(){
+                    alert("You won!");
+                    window.location.reload();
+                }, 500);
+            }
+            break;
+        case 2:
+            cell.firstElementChild.src = "img/icon_two.png";
+            if (score === 0) {
+                score += 2;
+            } else {
+                score *= 2;
+            }
+            scoreElement.innerHTML = "Score: " + score;
+            pointsSquaresFound++;
+            if (pointsSquares === pointsSquaresFound) {
+                setTimeout(function(){
+                    alert("You won!");
+                    window.location.reload();
+                }, 500);
+            }
+            break;
+        case 3:
+            cell.firstElementChild.src = "img/icons_three.png";
+            if (score === 0) {
+                score += 3;
+            } else {
+                score *= 3;
+            }
+            scoreElement.innerHTML = "Score: " + score;
+            pointsSquaresFound++;
+            if (pointsSquares === pointsSquaresFound) {
+                setTimeout(function(){
+                    alert("You won!");
+                    window.location.reload();
+                }, 500);
+            }
+            break;
     }
 }
 
