@@ -47,6 +47,9 @@ a {
 .game-board {
     width: 50%;
     display: inline-block;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .bold {
@@ -55,9 +58,12 @@ a {
 
 
 .info-square {
-    display: inline;
-    width: 100%;
+    width: 50%;
+    display: inline-block;
     height: 50%;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .info-square-text {
@@ -76,5 +82,10 @@ a {
 }
 
 .scoring {
+    width: 50%;
+    display: inline-block;
     margin-bottom: 150px;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
 }
